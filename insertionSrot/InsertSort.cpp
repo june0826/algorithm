@@ -1,51 +1,57 @@
 #include <iostream>
+#include "InsertSort.h"
 
-using namespace std;
-
-#define MAX 30
-void PrintString();
-void InputData(int * arr);
-void Sorting(int *arr);
-int main()
+InsertSort::InsertSort()
 {
-	int sortArray[MAX] = {8,4,15,5,79,54,10};
-	PrintString();
-	InputData(sortArray);
-	Sorting(sortArray);
-	return 0;
+	std::cout << "*** Insert Sort ***" << std::endl;
 }
 
-void PrintString()
+InsertSort::~InsertSort()
 {
-	cout << "*********************" << endl;
-	cout << "The number to sort : ";
-}
-void InputData(int *arr)
-{
-	memset(arr, NULL, MAX); // 0일때 null일때 찍어볼것
+	delete[] _preArray;
+	std::cout << "*** Destructor call~ ***" << std::endl;
 }
 
-void Sorting(int *arr)
+void InsertSort::Print()
+{
+	std::cout << "*********************" << std::endl;
+	std::cout << "The number to sort : ";
+	for (int i = 0; i < _Max; i++)
+	{
+		std::cout << _preArray[i] << " ";
+	}
+	std::cout << std::endl;
+}
+
+void InsertSort::InputData()
+{
+	std::cout << "total count : ";
+	std::cin >> _Max;
+	_preArray = new int[_Max];
+	memset(_preArray, NULL, _Max);
+	int number;
+	for (int i = 0; i < _Max; i++)
+	{
+		std::cout << "input data[" << i << "] = ";
+		std::cin >> _preArray[i];
+	}
+}
+
+void InsertSort::Sorting()
 {
 	int tmp;
 
-	for (int i = 1; i < MAX; i++)//4732
+	for (int i = 1; i < _Max; i++)//4732
 	{
-		tmp= arr[i];
+		tmp = _preArray[i];
 		for (int j = i-1; j >= 0; j--)
 		{
-			if (arr[j] > tmp)
+			if (_preArray[j] > tmp)
 			{
-				int swap = arr[j];
-				arr[j] = tmp;
-				arr[j+1] = swap;
+				int swap = _preArray[j];
+				_preArray[j] = tmp;
+				_preArray[j + 1] = swap;
 			}
 		}
 	}
-	for (int i = 0; i < MAX; i++)
-	{
-		if (arr[i] != 0)
-			cout << arr[i] << " ";
-	}
-
 }
