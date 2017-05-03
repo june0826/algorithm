@@ -1,15 +1,22 @@
 #include <iostream>
 #include "InsertSort.h"
-
+#include "MergeSort.h"
 using namespace std;
 
 int main()
 {
-	InsertSort *Isort = new InsertSort();
+	
+	MergeSort *Msort = new MergeSort();
+	Msort->InputData();
+	Msort->Print();
+	Msort->Sorting();
+	Msort->Print();
+	delete Msort;
+	/*InsertSort *Isort = new InsertSort();
 	Isort->InputData();
 	Isort->Print();
 	Isort->Sorting();
 	Isort->Print();
-	delete Isort;
+	delete Isort;*/
 	return 0;
 }
