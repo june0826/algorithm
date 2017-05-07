@@ -55,8 +55,6 @@ void swap(int a, int b)
 }
 void MergeSort::MSorting(int arr[], int startP, int divideP, int endP)
 {
-	int tSize = endP - startP + 1;
-
 	int n1_startP = startP;
 	int n2_startP = divideP + 1;
 	int t_P = startP;
