@@ -1,39 +1,18 @@
 #include <iostream>
 #include "MergeSort.h"
 
-MergeSort::MergeSort()
+MergeSort::MergeSort(int *arr, int size)
 {
 	std::cout << "*** Merge Sort ***" << std::endl;
+	_preArray = arr;
+	_Max = size;
+	_fArray = new int[_Max];
 }
 MergeSort::~MergeSort()
 {
-	delete[] _preArray;
+	_preArray = NULL;
 	delete[] _fArray;
 	std::cout << "*** Destructor call~ ***" << std::endl;
-}
-void MergeSort::Print()
-{
-	std::cout << "*********************" << std::endl;
-	std::cout << "The number to sort : ";
-	for (int i = 0; i < _Max; i++)
-	{
-		std::cout << _preArray[i] << " ";
-	}
-	std::cout << std::endl;
-}
-void MergeSort::InputData()
-{
-	std::cout << "total count : ";
-	std::cin >> _Max;
-	_preArray = new int[_Max];
-	_fArray = new int[_Max];
-	memset(_preArray, NULL, _Max);
-	memset(_fArray, NULL, _Max);
-	for (int i = 0; i < _Max; i++)
-	{
-		std::cout << "input data[" << i << "] = ";
-		std::cin >> _preArray[i];
-	}
 }
 void MergeSort::Divide(int arr[], int startP, int endP)
 {
@@ -46,13 +25,7 @@ void MergeSort::Divide(int arr[], int startP, int endP)
 		MSorting(arr, startP, divideP, endP);
 	}
 }
-void swap(int a, int b)
-{
-	int swap;
-	swap = a;
-	a = b;
-	b = swap;
-}
+
 void MergeSort::MSorting(int arr[], int startP, int divideP, int endP)
 {
 	int n1_startP = startP;

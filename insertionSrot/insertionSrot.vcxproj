@@ -79,11 +79,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Base.cpp" />
+    <ClCompile Include="HeapSort.cpp" />
     <ClCompile Include="InsertSort.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MergeSort.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Base.h" />
+    <ClInclude Include="HeapSort.h" />
     <ClInclude Include="InsertSort.h" />
     <ClInclude Include="MergeSort.h" />
   </ItemGroup>

@@ -1,10 +1,9 @@
-class MergeSort
+#include "Base.h"
+class MergeSort : public Base
 {
 public:
-	MergeSort();
+	MergeSort(int *arr, int size);
 	~MergeSort();
-	void Print();
-	void InputData();
 	void Sorting();
 	void Divide(int arr[],int startP, int endP);//배열 받는법 확인
 	void MSorting(int arr[], int startP, int divideP, int endP);
